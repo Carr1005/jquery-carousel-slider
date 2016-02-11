@@ -77,7 +77,6 @@ h3:hover
 	
 	-webkit-transition:left .5s;
 	left: 0px;
-	/*background-color: red;*/
 	width:100%;
 }
 
@@ -106,7 +105,7 @@ h3:hover
 }
 .left
 {
-	left:-33px; 	/*-33+27=-6*/
+	left:-33px;
 }
 .right
 {
@@ -134,20 +133,19 @@ i.right
 
 .i-active
 {
-	/*background-color: blue;*/
-	width: 28px;      /* 66-28 =38*/
+	width: 28px;
 	opacity: 1;
-	margin:0 36px;		/* angle push 33-27=6  6/2=3  push out occupy */
+	margin:0 36px;	/* 33-28=5  5/2=2.xx  33(covered part)+3=36  push out angle button under covered part */
 }
 
 .i-active-move
 {
-	margin:0 19px;  /* angle push , 38/2=19 push back occupy */
+	margin:0 18px;  /*  shift , 33+30=63 ,63-28=35,35/2=17.xx adjust the angle button to the middle  */
 }
 
 ul
 { 
-	position: relative; /*for left -112*/
+	position: relative; /*for initial postion -> left -112*/
 	white-space:nowrap;
 	font-size: 0;
 	transition: transform 0.5s ease-out;
@@ -158,13 +156,13 @@ li
 	display: inline-block;
 	background-color:#bdc1c9;
 	margin-right: 9px;
-	min-height:145px; /*for both side empty li*/
+	min-height:145px; /* for empty li at both tails */
 }
 img
 {
 	height:145px;
 	box-shadow: 0 1px 3px rgba(0,0,0,.25);
-	/*width: 145px;*/
+	/*width: 145px;*/ /* manipulated by jquery */
 }
 .title
 {

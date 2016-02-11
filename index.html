@@ -7,8 +7,8 @@
 		var pagecardw=145;
 		var pagecardn=7;
 		var margin=9;
-		var occupy=112;
-		var boxw=pagecardw*pagecardn+margin*(pagecardn-1)-occupy*2; //845
+		var covered=112;
+		var boxw=pagecardw*pagecardn+margin*(pagecardn-1)-covered*2; //845
 		var singlemove=(pagecardw+margin)*(pagecardn-2);
 
 		
@@ -17,7 +17,7 @@
 			$('.box').width(boxw);
 			$('li').width(pagecardw);
 			$('img').width(pagecardw);
-			$('ul').css({left:-occupy});
+			$('ul').css({left:-covered});
 
 			var listn = $('li').length;
 			var boundary = (pagecardw+margin)*(listn-2)-singlemove;
