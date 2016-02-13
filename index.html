@@ -4,24 +4,31 @@
     <link rel="stylesheet" type="text/css" href="css/Suggestion_Box.css">
     <script src="js/jquery-1.11.2.min.js"></script>
 	<script>
-		var pagecardw=145;
-		var pagecardn=7;
-		var margin=9;
-		var covered=112;
-		var boxw=pagecardw*pagecardn+margin*(pagecardn-1)-covered*2; //845
-		var singlemove=(pagecardw+margin)*(pagecardn-2);
-
-		
-		$(document).ready(function(){	
+		var cardw=145;	//page card's width .
+		var cardn=7;	//the number of visible page card .
+		var margin=9;	//margin between cards .
+		var covered=112;	//coverd part of card (at both tails of box).
+		var boxw=cardw*cardn+margin*(cardn-1)-covered*2; //box width 845
+		var singlemove=(cardw+margin)*(cardn-2);	//transform distance .
+		var listn=0;
+		var boundary=0;
+		$(document).ready(function(){	//be triggered when all elements are ready .	
 			
 			$('.box').width(boxw);
-			$('li').width(pagecardw);
-			$('img').width(pagecardw);
+			$('li').width(cardw);
+			$('img').width(cardw);
 			$('ul').css({left:-covered});
-
-			var listn = $('li').length;
-			var boundary = (pagecardw+margin)*(listn-2)-singlemove;
 			
+			$.getJSON("JSON/NBA.js",function (result){
+				listn = result['NBA_teams'].length;
+				boundary = (cardw+margin)*(listn)-singlemove;
+
+				$.each(result['NBA_teams'], function (i,field){
+					$('ul>li:first').after('<li><img src='+field.imgpath+'><div class=\'title\'>'+field.team+'<br><span>'+field.city+'</span></div></li>');
+				});
+			});
+			
+
 			$('.slide-wrap').hover(function() {
 				$('.shift').addClass('shift-active');
 				$('i').addClass('i-active');
@@ -80,120 +87,7 @@
 					<ul>
 						<li>
 						</li>
-						<li>	
-							<img src="img/NBA/Cavaliers.jpg">
-							<div class='title'>Cavaliers
-								<br>
-								<span>Cleveland</span>
-							</div>
-						</li>
 						<li>
-							<img src="img/NBA/Bulls.jpg">
-							<div class='title'>Bulls
-								<br>
-								<span>Chicago</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Warriors.jpg">
-							<div class='title'>Warriors
-								<br>
-								<span>Golden State</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Heat.jpg">
-							<div class='title'>Heat
-								<br>
-								<span>Miami</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Thunder.jpg">
-							<div class='title'>Thunder
-								<br>
-								<span>Oklahoma City</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Spurs.jpg">
-							<div class='title'>Spurs
-								<br>
-								<span>San Antonio</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Rockets.jpg">
-							<div class='title'>Rockets
-								<br>
-								<span>Houston</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Lakers.jpg">
-							<div class='title'>Lakers
-								<br>
-								<span>Los Angeles</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Bucks.jpg">Bucks
-							<div class='title'>Bucks
-								<br>
-								<span>Milwaukee</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Celtics.jpg">
-							<div class='title'>Celtics
-								<br>
-								<span>Boston</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Hornets.jpg">
-							<div class='title'>Hornets
-								<br>
-								<span>Charlotte</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Pistons.jpg">
-							<div class='title'>Pistons
-								<br>
-								<span>Detroit</span>
-							</div>
-						</li>
-						<li>
-							<img src="img/NBA/Mavericks.jpg">
-							<div class='title'>Mavericks
-								<br>
-								<span>Dallas</span>
-							</div>	
-						</li>
-						<li>
-							<img src="img/NBA/Hawks.jpg">
-							<div class='title'>Hawks
-								<br>
-								<span>Atlanta</span>
-							</div>	
-						</li>
-						<li>
-							<img src="img/NBA/Grizzlies.jpg">
-							<div class='title'>Grizzlies
-								<br>
-								<span>Memphis</span>
-							</div>	
-						</li>
-						<li>
-							<img src="img/NBA/Raptors.jpg">
-							<div class='title'>Raptors
-								<br>
-								<span>Toronto</span>
-							</div>	
-						</li>
-						<li>
-							<div></div>
 						</li>
 					</ul>
 				</div>
