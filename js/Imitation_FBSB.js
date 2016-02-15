@@ -10,30 +10,31 @@
 
 	function effect()
 	{
-		$('.slide-wrap').hover(function() {
-			$('.shift').addClass('shift-active');
-			$('i').addClass('i-active');
+		var target = this;
+		target.find('.slide-wrap').hover(function() {
+			target.find('.shift').addClass('shift-active');
+			target.find('i').addClass('i-active');
 		}, function() {
-			$('.shift').removeClass('shift-active');
-			$('i').removeClass('i-active');
+			target.find('.shift').removeClass('shift-active');
+			target.find('i').removeClass('i-active');
 		});
 
-		$('.right').hover(function() {
-			$('.slide').addClass('slide-active-r');
+		target.find('.right').hover(function() {
+			target.find('.slide').addClass('slide-active-r');
 		}, function() {
-			$('.slide').removeClass('slide-active-r');
+			target.find('.slide').removeClass('slide-active-r');
 		});
 
-		$('.left').hover(function() {
-			$('.slide').addClass('slide-active-l');
+		target.find('.left').hover(function() {
+			target.find('.slide').addClass('slide-active-l');
 		}, function() {
-			$('.slide').removeClass('slide-active-l');
+			target.find('.slide').removeClass('slide-active-l');
 		});
 
-		$('.shift').hover(function() {
-			$('i').addClass('i-active-move');
+		target.find('.shift').hover(function() {
+			target.find('i').addClass('i-active-move');
 		}, function() {
-			$('i').removeClass('i-active-move');
+			target.find('i').removeClass('i-active-move');
 		});
 	}
 
@@ -62,8 +63,10 @@
 		target.find('li').width(init_setting.cardw);
 		target.find('li').height(init_setting.cardh);
 		target.find('img').width(init_setting.cardw);
-		target.find('img').height(init_setting.cardh);		
+		target.find('img').height(init_setting.cardh);
+		target.find('.title').width(init_setting.cardw);		
 
+		effect.call(target);
 		var movement=0;
 		target.find('.right').click(function(event) {
 			if(Math.abs(movement) < boundary)
@@ -79,7 +82,6 @@
 	}
 
 	$.fn.FBSB = function(setting){
-		effect();
 		if(setting && typeof setting === 'object'){
 			init.call(this,setting);
 		}

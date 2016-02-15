@@ -172,7 +172,9 @@ img
 	font-weight: bold;
 	line-height: 16px;
 	color: #6a7180 !important;
-	font-size: 12px
+	font-size: 12px;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 span
