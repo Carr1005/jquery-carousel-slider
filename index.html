@@ -1,81 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/Suggestion_Box.css">
+    <link rel="stylesheet" type="text/css" href="css/Imitation_FBSB.css">
     <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/Imitation_FBSB.js"></script>
 	<script>
-		var cardw=145;	//page card's width .
-		var cardn=7;	//the number of visible page card .
-		var margin=9;	//margin between cards .
-		var covered=112;	//coverd part of card (at both tails of box).
-		var boxw=cardw*cardn+margin*(cardn-1)-covered*2; //box width 845
-		var singlemove=(cardw+margin)*(cardn-2);	//transform distance .
-		var listn=0;
-		var boundary=0;
-		$(document).ready(function(){	//be triggered when all elements are ready .	
-			
-			$('.box').width(boxw);
-			$('li').width(cardw);
-			$('img').width(cardw);
-			$('ul').css({left:-covered});
-			
-			$.getJSON("JSON/NBA.js",function (result){
-				listn = result['NBA_teams'].length;
-				boundary = (cardw+margin)*(listn)-singlemove;
+	$(function(){
 
-				$.each(result['NBA_teams'], function (i,field){
-					$('ul>li:first').after('<li><img src='+field.imgpath+'><div class=\'title\'>'+field.team+'<br><span>'+field.city+'</span></div></li>');
-				});
-			});
-			
-
-			$('.slide-wrap').hover(function() {
-				$('.shift').addClass('shift-active');
-				$('i').addClass('i-active');
-			}, function() {
-				$('.shift').removeClass('shift-active');
-				$('i').removeClass('i-active');
-			});
-
-			$('.right').hover(function() {
-				$('.slide').addClass('slide-active-r');
-			}, function() {
-				$('.slide').removeClass('slide-active-r');
-			});
-
-			$('.left').hover(function() {
-				$('.slide').addClass('slide-active-l');
-			}, function() {
-				$('.slide').removeClass('slide-active-l');
-			});
-
-			$('.shift').hover(function() {
-				$('i').addClass('i-active-move');
-			}, function() {
-				$('i').removeClass('i-active-move');
-			});
-
-			var movement=0;
-
-			$('.right').click(function(event) {
-				if(Math.abs(movement) < boundary)
-					movement-=singlemove;
-				$('ul').hover().css('transform','translateX('+movement+'px)');
-			});
-
-			$('.left').click(function(event) {
-				if(movement < 0)
-					movement+=singlemove;
-				$('ul').hover().css('transform','translateX('+movement+'px)');
-			});
+		$.getJSON("JSON/data.js",function (result){
+			var setting = {
+				subject:'Movie',
+				cardw : 145,	//page card's width .
+				cardh : 217,
+				cardn : 5,		//the number of visible page card .
+				margin : 9,		//margin between cards .
+				JSON :result
+			};
+			$('#movie').FBSB(setting);
 		});
-	</script>
-	<title>Imitation_FB_Suggestion_Box</title>
-</head>
 
+		$.getJSON("JSON/data.js",function (result){
+			var setting = {
+				subject:'NBA',
+				cardw : 145,	//page card's width .
+				cardh : 145,
+				cardn : 7,		//the number of visible page card .
+				margin : 9,		//margin between cards .
+				JSON :result
+			};
+			$('#nba').FBSB(setting);
+		});
+	});
+	</script>
+	<title>Imitation_FBSB</title>
+</head>
+	
 <body>
-	<div class ='box'>
-		<h3>NBA</h3>
+	<div class ='box' id="nba">
+		<h3></h3>
+		<div class='tri'></div>
+		<div class ='slide-wrap'>
+			<div class='border'>
+				<div class='slide'>
+					<div class='shift right'></div>
+					<i class='shift right'></i>
+					<div class='shift left'></div>
+					<i class ='shift left'></i>
+					<ul>
+						<li>
+						</li>
+						<li>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class ='box' id="movie">
+		<h3></h3>
 		<div class='tri'></div>
 		<div class ='slide-wrap'>
 			<div class='border'>
@@ -95,4 +77,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

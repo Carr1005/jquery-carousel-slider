@@ -18,8 +18,7 @@ html, body
 	margin:auto;
 	margin-top:5%;
 
-	overflow: hidden;
-	min-width:30%;    
+	overflow: hidden; 
 	min-height:350px; /* No matter how the window squeeze vertically , box's height stay at min-height*/
 
 
@@ -30,9 +29,11 @@ html, body
 
 h3
 {
+	width:0px;
 	padding: 20px 30px 15px;   /* using padding to adjust title's postion */
 	font-size: 24px;
 	cursor: pointer;
+
 }
 h3:hover
 {
@@ -57,7 +58,7 @@ h3:hover
 {
 	position: relative;
 	background:#d3d7dc;
-	height: 230px;
+/*	height: 230px;*/
 	border: 1px solid #bdc1c9;
 	width: 100%;
 }
@@ -155,14 +156,13 @@ li
 {
 	display: inline-block;
 	background-color:#bdc1c9;
-	margin-right: 9px;
-	min-height:145px; /* for empty li at both tails */
+	/*margin-right: 9px;*/
+	/*min-height:145px;width: 145px; *//* for empty li at both tails , manipulated by jquery*/
 }
 img
 {
-	height:145px;
 	box-shadow: 0 1px 3px rgba(0,0,0,.25);
-	/*width: 145px;*/ /* manipulated by jquery */
+	/*width: 145px;height:145px;*/ /* manipulated by jquery */
 }
 .title
 {
