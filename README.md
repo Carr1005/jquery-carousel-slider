@@ -116,7 +116,7 @@ Pattern in JSON file would look like this:
 }
 ```
 ##To Do
-1. Add a example that using AJAX to get JSON file .
+1. Add an example that using AJAX to get JSON file .
 2. Complete the lincense related documents and further information.
 
 This is the very first time that I made a jQuery plugin , careless with performance issue , it's glad that if somebody could revise the code to better performance.
