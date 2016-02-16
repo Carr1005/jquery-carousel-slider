@@ -12,9 +12,10 @@ Make sure that jQuery library and needed files was included .
 <script src="js/Imitation_FBSB.js"></script>
 ```
 
-[Demo](http://carr1005.github.io/)
-## Usage
 
+## Usage
+It's better to see the Demo first !
+####[Demo](http://carr1005.github.io/)
 
 ###HTML
 The essential HTML pattern to generate slide box .
@@ -45,6 +46,7 @@ The id of the outmost div is the key to trig plugin .
 
 ###javascript&jQuery
 There are several ways to generate initial setting .
+Details of initial setting's parameters would be explained with real example in [Demo .](http://carr1005.github.io/)
 ```html
 <script>
 
@@ -54,7 +56,7 @@ There are several ways to generate initial setting .
 			var setting = {
 				subject:'Subject',	//subject would be the theme of the slide box . 
 				cardw : 145,	//page card's width .
-				cardh : 217,	//page card's hieght .
+				cardh : 217,	//page card's height .
 				cardn : 5,		//the number of visible page card .
 				margin : 9,		//margin between cards .
 				JSON :result	//prepare the JSON file .
@@ -113,3 +115,4 @@ Pattern in JSON file would look like this:
         ]
 }
 ```
+##To Do
