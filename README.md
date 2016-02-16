@@ -46,7 +46,7 @@ The id of the outmost div is the key to trig plugin .
 
 ###javascript&jQuery
 There are several ways to generate initial setting .
-Details of initial setting's parameters would be explained with example in [Demo .](http://carr1005.github.io/)
+Details of initial setting's parameters would be explained with examples in [Demo .](http://carr1005.github.io/)
 ```html
 <script>
 
