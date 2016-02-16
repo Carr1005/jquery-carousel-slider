@@ -1,6 +1,6 @@
 # Imitation_FB_Suggestion-Box
 
-This is a plugin mainly depends on jQuery ,Imitating the UI of FB's About Page section which presents TV ,Movies or Music suggestions.
+This is a plugin mainly depends on jQuery ,imitating the UI of FB's About Page section which presents TV ,Movies or Music suggestions.
 
 ## Prerequisities
 
@@ -46,7 +46,7 @@ The id of the outmost div is the key to trig plugin .
 
 ###javascript&jQuery
 There are several ways to generate initial setting .
-Details of initial setting's parameters would be explained with real example in [Demo .](http://carr1005.github.io/)
+Details of initial setting's parameters would be explained with example in [Demo .](http://carr1005.github.io/)
 ```html
 <script>
 
@@ -116,3 +116,9 @@ Pattern in JSON file would look like this:
 }
 ```
 ##To Do
+1. Add a example that using AJAX to get JSON file .
+2. Complete the lincense related documents and further information.
+
+This is the very first time that I made a jQuery plugin , careless with performance issue , it's glad that if somebody could revise the code to better performance.
+(And I'd appreciate if someone could help me correct English in this document ^^")
+
