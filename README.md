@@ -1,4 +1,4 @@
-# jquery_carousel_slider (Imitation of FaceBook UI component)
+# jquery-carousel-slider (Imitation of FaceBook UI component)
 
 This is a plugin mainly depends on jQuery, imitates the UI component of FaceBook which presents TV, Movies or Music page suggestions.
 
@@ -24,26 +24,26 @@ The slider needs a div element with **id** attribute to bind.
 <div class ='box' id="name_it"></div>
 ```
 
-## JavaScript&jQuery
+## JavaScript & jQuery
 There are several ways to assign the setting to the slider box.
 Details of available parameters would be explained with examples in [Demo .](http://carr1005.github.io/)
 ```html
 <script>
 
 	$(function(){
-//--------------------------------------------------------1.
+		/*1*/
 		$.getJSON("JSON/data.js",function (result){
 			var setting = {
 				subject:'Subject',	//subject would be the theme of the slide box . 
-				cardw : 145,	//page card's width .
-				cardh : 217,	//page card's height .
-				cardn : 5,		//the number of visible card .
-				margin : 9,		//margin between cards .
-				JSON :result	//prepare the JSON file .
+				cardw : 145,		//page card's width .
+				cardh : 217,		//page card's height .
+				cardn : 5,			//the number of visible card .
+				margin : 9,			//margin between cards .
+				JSON :result		//prepare the JSON file .
 			};
 			$('#id').slider(setting);
 		});
-//--------------------------------------------------------2.
+		/*2*/
 		var setting2 = {
 			subject:'Subject',
 			cardw : 145,	
@@ -52,7 +52,7 @@ Details of available parameters would be explained with examples in [Demo .](htt
 			margin : 9,		
 			JSON :result
 		};
-		
+		/*3*/
 		$.getJSON("JSON/data.js",function (result){
 			setting2.JSON = result;
 			$('#id').slider(setting2);
@@ -79,7 +79,7 @@ Add image, title, descriptopn that you want to present in slide box .
 Pattern in JSON file:
 ```html
 {
-	//notice! the "Subject" need to be same as specified in initial setting .
+	//Notice !! the "Subject" need to be same as specified in initial setting .
 	"Subject":[
 			{
 	            "title":"Gin",
