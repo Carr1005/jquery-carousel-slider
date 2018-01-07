@@ -1,52 +1,32 @@
-# Imitation_FB_Suggestion-Box
+# jquery_carousel_slider (Imitation of FaceBook UI component)
 
-This is a plugin mainly depends on jQuery ,imitating the UI of FB's About Page section which presents TV ,Movies or Music suggestions.
+This is a plugin mainly depends on jQuery, imitates the UI component of FaceBook which presents TV, Movies or Music page suggestions.
 
 ## Prerequisities
 
-Make sure that jQuery library and needed files was included .
+Make sure that jQuery library and required files was included .
 
 ```html
-<link rel="stylesheet" type="text/css" href="css/Imitation_FBSB.css">
+<link rel="stylesheet" type="text/css" href="css/jquery_carousel_slider.css">
 <script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/Imitation_FBSB.js"></script>
+<script src="js/jquery_carousel_slider.js"></script>
 ```
 
 
 ## Usage
-It's better to see the Demo first !
-####[Demo](http://carr1005.github.io/)
+Let's see the Demo first !
+#### [Demo](http://carr1005.github.io/)
 
-###HTML
-The essential HTML pattern to generate slide box .
-The id of the outmost div is the key to trig plugin . 
+## HTML
+The slider needs a div element with **id** attribute to bind.
 
 ```html
-<div class ='box' id="name_it">
-	<h3></h3>
-	<div class='tri'></div>
-	<div class ='slide-wrap'>
-		<div class='border'>
-			<div class='slide'>
-				<div class='shift right'></div>
-				<i class='shift right'></i>
-				<div class='shift left'></div>
-				<i class ='shift left'></i>
-				<ul>
-					<li>
-					</li>
-					<li>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
+<div class ='box' id="name_it"></div>
 ```
 
-###javascript&jQuery
-There are several ways to generate initial setting .
-Details of initial setting's parameters would be explained with examples in [Demo .](http://carr1005.github.io/)
+## JavaScript&jQuery
+There are several ways to assign the setting to the slider box.
+Details of available parameters would be explained with examples in [Demo .](http://carr1005.github.io/)
 ```html
 <script>
 
@@ -57,11 +37,11 @@ Details of initial setting's parameters would be explained with examples in [Dem
 				subject:'Subject',	//subject would be the theme of the slide box . 
 				cardw : 145,	//page card's width .
 				cardh : 217,	//page card's height .
-				cardn : 5,		//the number of visible page card .
+				cardn : 5,		//the number of visible card .
 				margin : 9,		//margin between cards .
 				JSON :result	//prepare the JSON file .
 			};
-			$('#id').FBSB(setting);
+			$('#id').slider(setting);
 		});
 //--------------------------------------------------------2.
 		var setting2 = {
@@ -75,11 +55,11 @@ Details of initial setting's parameters would be explained with examples in [Dem
 		
 		$.getJSON("JSON/data.js",function (result){
 			setting2.JSON = result;
-			$('#id').FBSB(setting2);
+			$('#id').slider(setting2);
 		});
 //--------------------------------------------------------3.
 		$.getJSON("JSON/data.js",function (result){
-			$('#id').FBSB({
+			$('#id').slider({
 				subject:'Subject',
 				cardw : 145,	
 				cardh : 217,
@@ -93,10 +73,10 @@ Details of initial setting's parameters would be explained with examples in [Dem
 
 </script>
 ```
-###JSON
-Adding image , title , descriptopn that you wanna to present in slide box .
+## JSON
+Add image, title, descriptopn that you want to present in slide box .
 
-Pattern in JSON file would look like this:
+Pattern in JSON file:
 ```html
 {
 	//notice! the "Subject" need to be same as specified in initial setting .
@@ -115,10 +95,5 @@ Pattern in JSON file would look like this:
         ]
 }
 ```
-##To Do
-1. Add an example that using AJAX to get JSON file .
-2. Complete the lincense related documents and further information.
-
-This is the very first time that I made a jQuery plugin , careless with performance issue , it's glad that if somebody could revise the code to better performance.
-(And I'd appreciate if someone could help me correct English in this document ^^")
-
+## To Do
+* Complete the lincense related documents and further informations.

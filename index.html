@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/Imitation_FBSB.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery_carousel_slider.css">
     <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/Imitation_FBSB.js"></script>
+    <script src="js/jquery_carousel_slider.js"></script>
 	<script>
 	$(function(){
 
@@ -16,7 +16,7 @@
 				margin : 9,		//margin between cards .
 				JSON :result
 			};
-			$('#movie').FBSB(setting);
+			$('#movie').slider(setting);
 		});
 
 		$.getJSON("JSON/data.js",function (result){
@@ -28,54 +28,16 @@
 				margin : 9,		//margin between cards .
 				JSON :result
 			};
-			$('#nba').FBSB(setting);
+			$('#nba').slider(setting);
 		});
 	});
 	</script>
-	<title>Imitation_FBSB</title>
+	<title>jquery_carousel_slider (Imitation of FaceBook UI component)</title>
 </head>
 	
 <body>
-	<div class ='box' id="nba">
-		<h3></h3>
-		<div class='tri'></div>
-		<div class ='slide-wrap'>
-			<div class='border'>
-				<div class='slide'>
-					<div class='shift right'></div>
-					<i class='shift right'></i>
-					<div class='shift left'></div>
-					<i class ='shift left'></i>
-					<ul>
-						<li>
-						</li>
-						<li>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class ='box' id="movie">
-		<h3></h3>
-		<div class='tri'></div>
-		<div class ='slide-wrap'>
-			<div class='border'>
-				<div class='slide'>
-					<div class='shift right'></div>
-					<i class='shift right'></i>
-					<div class='shift left'></div>
-					<i class ='shift left'></i>
-					<ul>
-						<li>
-						</li>
-						<li>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class ='box' id="nba"></div>
+	<div class ='box' id="movie"></div>
 </body>
 
 </html>
