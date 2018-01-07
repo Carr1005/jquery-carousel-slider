@@ -14,8 +14,7 @@ Make sure that jQuery library and required files was included .
 
 
 ## Usage
-Let's see the Demo first !
-#### [Demo](http://carr1005.github.io/)
+Let's see the Demo first ! #### [Demo](http://carr1005.github.io/)
 
 ## HTML
 The slider needs a div element with **id** attribute to bind.
@@ -34,12 +33,12 @@ Details of available parameters would be explained with examples in [Demo .](htt
 		/*1*/
 		$.getJSON("JSON/data.js",function (result){
 			var setting = {
-				subject:'Subject',	//subject would be the theme of the slide box . 
-				cardw : 145,		//page card's width .
-				cardh : 217,		//page card's height .
-				cardn : 5,			//the number of visible card .
-				margin : 9,			//margin between cards .
-				JSON :result		//prepare the JSON file .
+				subject:'Subject',	//subject would be the theme of the slide box. 
+				cardw : 145,		//page card's width.
+				cardh : 217,		//page card's height.
+				cardn : 5,			//the number of visible card.
+				margin : 9,			//margin between cards.
+				JSON :result		//prepare the JSON file.
 			};
 			$('#id').slider(setting);
 		});
@@ -74,12 +73,12 @@ Details of available parameters would be explained with examples in [Demo .](htt
 </script>
 ```
 ## JSON
-Add image, title, descriptopn that you want to present in slide box .
+Add image, title, descriptopn that you want to present in slide box.
 
 Pattern in JSON file:
 ```html
 {
-	//Notice !! the "Subject" need to be same as specified in initial setting .
+	//Notice !! the "Subject" need to be the same as the one that specifies in setting.
 	"Subject":[
 			{
 	            "title":"Gin",
