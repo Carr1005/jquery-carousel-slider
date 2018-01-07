@@ -50,7 +50,10 @@
 		var listn = init_setting.JSON[init_setting.subject].length;
 		var boundary = (init_setting.cardw+init_setting.margin)*(listn)-singlemove;
 		var target = this;
-	
+		var sliderframestring = '<h3></h3><div class=\'tri\'></div><div class =\'slide-wrap\'><div class=\'border\'><div class=\'slide\'><div class=\'shift right\'></div><i class=\'shift right\'></i><div class=\'shift left\'></div><i class =\'shift left\'></i><ul><li></li><li></li></ul></div></div></div>';
+		var sliderhtml=$(sliderframestring);
+		sliderhtml.appendTo(target);
+
 		$.each(init_setting.JSON[init_setting.subject], function (i,field){
 			target.find('ul>li:first').after('<li><img src='+field.imgpath+'><div class=\'title\'>'+field.title+'<br><span>'+field.des+'</span></div></li>');
 		});
@@ -81,7 +84,7 @@
 		});
 	}
 
-	$.fn.FBSB = function(setting){
+	$.fn.slider = function(setting){
 		if(setting && typeof setting === 'object'){
 			init.call(this,setting);
 		}
