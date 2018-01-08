@@ -14,16 +14,16 @@ Make sure that jQuery library and required files was included .
 
 
 ## Usage
-Let's see the Demo first ! #### [Demo](http://carr1005.github.io/)
+Let's see the [Demo](http://carr1005.github.io/) first !
 
-## HTML
+### HTML
 The slider needs a div element with **id** attribute to bind.
 
 ```html
 <div class ='box' id="name_it"></div>
 ```
 
-## JavaScript & jQuery
+### JavaScript & jQuery
 There are several ways to assign the setting to the slider box.
 Details of available parameters would be explained with examples in [Demo .](http://carr1005.github.io/)
 ```html
@@ -72,7 +72,7 @@ Details of available parameters would be explained with examples in [Demo .](htt
 
 </script>
 ```
-## JSON
+### JSON
 Add image, title, descriptopn that you want to present in slide box.
 
 Pattern in JSON file:
