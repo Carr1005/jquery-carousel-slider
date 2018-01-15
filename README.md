@@ -82,6 +82,7 @@ Pattern in JSON file:
 ```html
 {
 	//  Notice !! the "Subject" need to be the same as the one that be specified in setting.
+
 	"Subject":[
 			{
 	            "title":"Gin",
