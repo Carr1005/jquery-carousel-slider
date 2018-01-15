@@ -1,6 +1,6 @@
 # jquery-carousel-slider (Imitation of FaceBook UI component)
 
-This is a plugin mainly depends on jQuery, imitates the UI component of FaceBook which presents TV, Movies or Music page suggestions.
+A plugin mainly depends on jQuery, imitates the UI component of FaceBook which presents TV, Movies or Music page suggestions.
 
 ## Prerequisities
 
@@ -25,46 +25,49 @@ The slider needs a div element with **id** attribute to bind.
 
 ### JavaScript & jQuery
 There are several ways to assign the setting to the slider box.
-Details of available parameters would be explained with examples in [Demo .](http://carr1005.github.io/)
+Details of custom parameters would be explained with examples in [Demo .](http://carr1005.github.io/)
 ```html
 <script>
 
 	$(function(){
-		/*1*/
-		$.getJSON("JSON/data.js",function (result){
+	
+		/* 1 */
+		$.getJSON('JSON/data.js', function(result) {
 			var setting = {
-				subject:'Subject',	//subject would be the theme of the slide box. 
-				cardw : 145,		//page card's width.
-				cardh : 217,		//page card's height.
-				cardn : 5,			//the number of visible card.
-				margin : 9,			//margin between cards.
-				JSON :result		//prepare the JSON file.
+				subject:'Subject',	//  Subject would be the theme of the slide box. 
+				cardw: 145,		//  Page card's width.
+				cardh: 217,		//  Page card's height.
+				cardn: 5,	        //  The number of visible card.
+				margin: 9,	        //  Margin between cards.
+				JSON: result
 			};
 			$('#id').slider(setting);
 		});
-		/*2*/
+	
+		/* 2 */
 		var setting2 = {
 			subject:'Subject',
-			cardw : 145,	
-			cardh : 217,
-			cardn : 5,		
-			margin : 9,		
-			JSON :result
+			cardw: 145,	
+			cardh: 217,
+			cardn: 5,		
+			margin: 9,		
+			JSON:result
 		};
-		/*3*/
-		$.getJSON("JSON/data.js",function (result){
+
+		$.getJSON('JSON/data.js', function (result) {
 			setting2.JSON = result;
 			$('#id').slider(setting2);
 		});
-//--------------------------------------------------------3.
-		$.getJSON("JSON/data.js",function (result){
+	
+		/* 3 */
+		$.getJSON('JSON/data.js', function (result) {
 			$('#id').slider({
-				subject:'Subject',
-				cardw : 145,	
-				cardh : 217,
-				cardn : 5,		
-				margin : 9,
-				JSON :result
+				subject: 'Subject',
+				cardw: 145,	
+				cardh: 217,
+				cardn: 5,		
+				margin: 9,
+				JSON: result
 			});
 		});
 
@@ -73,12 +76,12 @@ Details of available parameters would be explained with examples in [Demo .](htt
 </script>
 ```
 ### JSON
-Add image, title, descriptopn that you want to present in slide box.
+Add items with image, title and descriptopn that you want to present in the slider box.
 
 Pattern in JSON file:
 ```html
 {
-	//Notice !! the "Subject" need to be the same as the one that specifies in setting.
+	//  Notice !! the "Subject" need to be the same as the one that be specified in setting.
 	"Subject":[
 			{
 	            "title":"Gin",
