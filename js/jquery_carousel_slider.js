@@ -97,7 +97,6 @@
 				movement += singlemove;
 			}
 			ismobile ? target.find('ul').css('transform','translateX('+movement+'px)') : target.find('ul').hover().css('transform','translateX('+movement+'px)');
-				target.find('ul').css('transform','translateX('+movement+'px)');
 		}
 		return movement;
 	}
