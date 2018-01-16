@@ -17,7 +17,7 @@ Make sure that jQuery library and required files was included .
 Let's see the [Demo](http://carr1005.github.io/) first !
 
 ### HTML
-The slider needs a div element with **id** attribute to bind.
+The slider needs a div element with **id** attribute for binding.
 
 ```html
 <div class ='box' id="name_it"></div>
