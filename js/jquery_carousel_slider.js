@@ -2,10 +2,10 @@
 
 	var default_setting = {
 		subject:'Default',
-		cardw : 145,	//page card's width .
-		cardh : 145, 	//			  height .
-		cardn : 7,		//the number of visible page card .
-		margin : 9		//margin between cards .	
+		cardw : 145,	// page card's width .
+		cardh : 145, 	// height .
+		cardn : 7,	// the number of visible page card .
+		margin : 9	// margin between cards .	
 	}
 
 	var touch_event = {};
@@ -39,81 +39,68 @@
 		});
 	}
 
-    function isMobile() {
+	function isMobile() {
 		if (/Mobi|Tablet|iPad|iPhone/.test(navigator.userAgent)) {
-	    	
-	    	touch_event = { 
+			touch_event = { 
 				movement: 0,
 				touchStartX: 0,
 				prevTouchX: 0,
 				beingTouched: false
-      		};
+			};
 			return true;
-
 		} else {
 			return false;
 		}	
-    }
+	}
 
-    function handleTouchEvent(para) {
-    	var target = this;
-    	target[0].addEventListener("touchstart", handleStart, false);
-  		target[0].addEventListener("touchend", function(e) {handleEnd(e, para)}, false);
-  		target[0].addEventListener("touchmove", handleMove, false);
-    }
+	function handleTouchEvent(para) {
+		var target = this;
+		target[0].addEventListener("touchstart", handleStart, false);
+		target[0].addEventListener("touchend", function(e) {handleEnd(e, para)}, false);
+		target[0].addEventListener("touchmove", handleMove, false);
+	}
 
-    function handleStart(e) {
-    	touch_event.touchStartX = e.targetTouches[0].clientX;
+	function handleStart(e) {
+		touch_event.touchStartX = e.targetTouches[0].clientX;
 		touch_event.beingTouched = true;
-    }
+	}
     
-    function handleEnd(e, para) {
-    	if (touch_event.touchStartX != e.changedTouches[0].clientX) {
-    		
-    		if(touch_event.movement > 0) {
+	function handleEnd(e, para) {
+		if (touch_event.touchStartX != e.changedTouches[0].clientX) {
+			if(touch_event.movement > 0) {
 				para.movement = sliding(para.ismobile, $(e.currentTarget), 0, para.singlemove, para.boundary, para.movement);
 			} else {
 				para.movement = sliding(para.ismobile, $(e.currentTarget), 1, para.singlemove, para.boundary, para.movement);
 			}
 			touch_event.touchStartX = 0;
 			touch_event.beingTouched = false;
-    	}
-    }
+		}
+	}
     
-    function handleMove(e) {
-    	if (touch_event.beingTouched) {
+	function handleMove(e) {
+		if (touch_event.beingTouched) {
 			let deltaX = e.changedTouches[0].clientX - touch_event.touchStartX;
 			touch_event.movement = deltaX
 			touch_event.prevTouchX = e.changedTouches[0].clientX;
 		}
-    }
+	}
 
-    function sliding(ismobile, target, direction, singlemove, boundary, movement) {
-    	
-    	if (direction > 0) {
+	function sliding(ismobile, target, direction, singlemove, boundary, movement) {
 
-    		if(Math.abs(movement) < boundary) {
+		if (direction > 0) {
+			if (Math.abs(movement) < boundary) {
 				movement -= singlemove;
 			}
-			if (ismobile) {
-				target.find('ul').css('transform','translateX('+movement+'px)');
-			} else {
-				target.find('ul').hover().css('transform','translateX('+movement+'px)');
-			}
-			
-    	} else {
-
-    		if(movement < 0) {
+			ismobile ? target.find('ul').css('transform','translateX('+movement+'px)') : target.find('ul').hover().css('transform','translateX('+movement+'px)');
+		} else {
+			if (movement < 0) {
 				movement += singlemove;
 			}
-			if (ismobile) {
+			ismobile ? target.find('ul').css('transform','translateX('+movement+'px)') : target.find('ul').hover().css('transform','translateX('+movement+'px)');
 				target.find('ul').css('transform','translateX('+movement+'px)');
-			} else {
-				target.find('ul').hover().css('transform','translateX('+movement+'px)');
-			}
-    	}
-    	return movement;
-    }
+		}
+		return movement;
+	}
 
 	function init (cus_setting) {	
 		// overwrite setting
@@ -146,7 +133,6 @@
 		target.find('.title').width(init_setting.cardw);		
 
 		if(isMobile()) {
-
 			var para = {
 				ismobile: true,
 				movement: 0,
@@ -154,12 +140,11 @@
 				boundary: boundary
 			};
 			handleTouchEvent.call(target, para);
-			console.log('Mobile');
 
 		} else {
-			var movement = 0;
+
 			effect.call(target);
-			var movement=0;
+			var movement = 0;
 			target.find('.right').click(function(event) {
 				movement = sliding(false, target, 1, singlemove, boundary, movement);
 			});
