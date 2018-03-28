@@ -14,7 +14,7 @@ Make sure that jQuery library and required files was included .
 
 
 ## Usage
-Let's see the [Demo](http://carr1005.github.io/) first !
+Let's see the [Demo](http://carr1005.github.io/jquery-carousel-slider/index.html) first !
 
 ### HTML
 The slider needs a div element with **id** attribute for binding.
@@ -25,7 +25,7 @@ The slider needs a div element with **id** attribute for binding.
 
 ### JavaScript & jQuery
 There are several ways to assign the setting to the slider box.
-Details of custom parameters would be explained with examples in [Demo .](http://carr1005.github.io/)
+Details of custom parameters would be explained with examples in [Demo .](http://carr1005.github.io/jquery-carousel-slider/index.html)
 ```html
 <script>
 
@@ -98,5 +98,3 @@ Pattern in JSON file:
         ]
 }
 ```
-## To Do
-* Complete the lincense related documents and further informations.
